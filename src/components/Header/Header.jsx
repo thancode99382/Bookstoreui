@@ -14,14 +14,14 @@ export default function Header() {
           </div>
           <div className="col-lg-6 col-xl-5 offset-lg-0 d-xl-flex justify-content-lg-center align-items-lg-center justify-content-xl-end">
             <button
-              className="btn btn-primary"
+              className="btn btn-outline-dark"
               type="button"
-              style={{ marginLeft: "-8px" }}
+              style={{ marginLeft: "-8px", marginRight: "10px" }}
             >
-              Button
+              Currency
             </button>
-            <button className="btn btn-primary" type="button">
-              Button
+            <button className="btn btn-outline-dark" type="button">
+              Cart
             </button>
           </div>
         </div>

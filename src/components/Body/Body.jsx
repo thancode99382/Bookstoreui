@@ -1,5 +1,5 @@
 // import React from 'react'
-
+import brick_png from '/assets/img/bg_brick.jpg'
 
 
 export default function Body() {
@@ -9,7 +9,7 @@ export default function Body() {
           <div
               className="row"
               style={{
-                background: `url(/asset/img/bg_brick.jpg)`,
+                background: `url(${brick_png})`,
                 paddingLeft: 26,
                 paddingRight: 26,
               }}
