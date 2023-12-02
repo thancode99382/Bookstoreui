@@ -1,18 +1,30 @@
-import './App.css'
-import Body from './components/Body/Body'
-import Footer from './components/Footer'
-import Header from './components/Header/Header'
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { publicRoutes } from "./Routes/Routes";
+import DefaultLayout from "./components/DefaultLayout/DefaultLayout";
 
 function App() {
   return (
     <div>
-      <Header/>
-      <hr />
-      <Body/>
-      <hr />
-      <Footer/>
+      <Router>
+        <Routes>
+          {publicRoutes.map((route, index) => {
+            const Page = route.component;
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <DefaultLayout>
+                    <Page />
+                  </DefaultLayout>
+                }
+              />
+            );
+          })}
+        </Routes>
+      </Router>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

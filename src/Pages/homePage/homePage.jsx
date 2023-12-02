@@ -1,8 +1,15 @@
 // import React from 'react'
+
+
+
 import brick_png from '/assets/img/bg_brick.jpg'
+import Silde from '../../json/Slide'
 
 
 export default function Body() {
+
+
+
   return (
       <>
         <div className="container-fluid">
@@ -12,7 +19,7 @@ export default function Body() {
                 background: `url(${brick_png})`,
                 paddingLeft: 26,
                 paddingRight: 26,
-              }}
+              }}    
           >
             <div className="col-xl-3 d-xl-flex flex-column justify-content-xl-center">
               <h2 style={{color: "#27ae61", fontWeight: "bold"}}>
@@ -47,42 +54,42 @@ export default function Body() {
                 <ul>
                   <li>
                     <a className="image_title" href="#">
-                      KungFu Panda
+                     Slide 1
                     </a>
                     <a href="#">
-                      <img src="http://thecodeplayer.com/uploads/media/3yiC6Yq.jpg"/>
+                      <img src="https://st4.depositphotos.com/13193658/22460/i/450/depositphotos_224600602-stock-photo-beautiful-woman-glasses-reading-pile.jpg"/>
                     </a>
                   </li>
                   <li>
                     <a className="image_title" href="#">
-                      Toy Story
+                    Slide 2
                     </a>
                     <a href="#">
-                      <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg"/>
+                      <img src="https://static7.depositphotos.com/1030334/715/i/600/depositphotos_7157131-stock-photo-books.jpg"/>
                     </a>
                   </li>
                   <li>
                     <a className="image_title" href="#">
-                      Wall-E
+                    Slide 3
                     </a>
                     <a href="#">
-                      <img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg"/>
+                      <img src="https://st4.depositphotos.com/13193658/22462/i/600/depositphotos_224629482-stock-photo-beautiful-blonde-woman-glasses-reading.jpg"/>
                     </a>
                   </li>
                   <li>
                     <a className="image_title" href="#">
-                      UP!
+                    Slide 4
                     </a>
                     <a href="#">
-                      <img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg"/>
+                      <img src="https://st3.depositphotos.com/13349494/18797/i/600/depositphotos_187975840-stock-photo-floor-stack-different-books-red.jpg"/>
                     </a>
                   </li>
                   <li>
                     <a className="image_title" href="#">
-                      Cars
+                    Slide 5
                     </a>
                     <a href="#">
-                      <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
+                      <img src="https://st4.depositphotos.com/13324256/19674/i/600/depositphotos_196748072-stock-photo-open-book-front-row-books.jpg"/>
                     </a>
                   </li>
                 </ul>
@@ -404,7 +411,7 @@ export default function Body() {
                         Finding the Way Home
                         <br/>A woman leaves her busy San Francisco life behind
                         and returns to her <br/>
-                        small hometown after her mother's death. She struggles to
+                        small hometown after her mother s death. She struggles to
                         reconnect with
                         <br/> family and old friends while dealing with
                         unresolved issues from her <br/>
@@ -508,7 +515,7 @@ export default function Body() {
           <blockquote className="quote-card bg-success text-white">
             <p>
               The more that you read, the more things you will know. The more that
-              you learn, the more places you'll go.
+              you learn, the more places you ll go.
             </p>
             <cite>Dr. Seuss</cite>{" "}
           </blockquote>
@@ -623,7 +630,7 @@ export default function Body() {
                         <br/>A legal drama and real-life story about a gifted
                         young lawyer <br/>
                         challenging racial discrimination and economic injustice
-                        in Alabama's <br/>
+                        in Alabama s <br/>
                         broken legal system one case at a time.
                       </p>
                     </div>
@@ -1220,7 +1227,7 @@ export default function Body() {
                   <p className="text-primary card-text mb-0">Article</p>
                   <h4 className="card-title">Top 10 E-books to read</h4>
                   <p className="card-text">
-                    This month's hottest digital reads showcase the diverse
+                    This months hottest digital reads showcase the diverse
                     interests of <br/>
                     modern readers. Topping the charts is the poignant literary
                     fiction The <br/>
