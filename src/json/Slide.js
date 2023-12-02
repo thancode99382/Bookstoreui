@@ -1,4 +1,4 @@
-const slides = [
+export const slides = [
     {
       title: 'Slide 1',
       imageUrl: 'https://st4.depositphotos.com/13193658/22460/i/450/depositphotos_224600602-stock-photo-beautiful-woman-glasses-reading-pile.jpg'

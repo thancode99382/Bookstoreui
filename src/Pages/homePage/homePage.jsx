@@ -3,7 +3,7 @@
 
 
 import brick_png from '/assets/img/bg_brick.jpg'
-import Silde from '../../json/Slide'
+// import slides from '../../json/Slide'
 
 
 export default function Body() {
@@ -52,6 +52,16 @@ export default function Body() {
             <div className="col">
               <div className="accordian">
                 <ul>
+                 {/*  {slides.map((slide) => {
+                    <li>
+                    <a className="image_title" href="#">
+                     {slide.title}
+                    </a>
+                    <a href="#">
+                      <img src={slide.imageUrl}/>
+                    </a>
+                  </li>
+                  })} */}
                   <li>
                     <a className="image_title" href="#">
                      Slide 1
