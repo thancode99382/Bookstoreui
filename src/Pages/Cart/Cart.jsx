@@ -1,8 +1,45 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../components/CartContext";
 function Cart() {
   const { cartItems } = useContext(CartContext);
+  const { setCartItems } = useContext(CartContext);
   const { removeFromCart } = useContext(CartContext);
+
+  const [sum, setSum] = useState(0);
+  //   const [quantity, setQuantity] = useState(1);
+
+  function handleQuantityChange(book) {
+    const existing = cartItems.find((item) => item.isbn13 === book.isbn13);
+    if (existing) {
+      setCartItems((items) => {
+        existing.quantity++;
+        return [...items];
+      });
+    } else {
+      setCartItems((items) => [...items, { ...book, quantity: 1 }]);
+    }
+  }
+
+  function calculateSum(books) {
+    let totalCost = 0;
+
+    // Loop through each book and extract the price
+    books.forEach((book) => {
+      // Remove "$" sign and convert to number
+      let price = parseFloat(book.price.replace("$", ""));
+
+      // Add to the total cost
+      totalCost += price;
+    });
+    setSum(totalCost.toFixed(2));
+    return totalCost; // Return the total cost formatted to two decimal places
+  }
+
+  useEffect(() => {
+    calculateSum(cartItems);
+  }, [cartItems]);
+
+  //   console.log(cartItems);
   console.log(cartItems);
   return (
     <div className="container">
@@ -42,7 +79,7 @@ function Cart() {
                                     className="img-fluid rounded shadow-sm"
                                     src={cart.image}
                                     alt
-                                    width="70"
+                                    width="90"
                                   />
                                   <div className="ml-3 d-inline-block align-middle">
                                     <h5 className="mb-0">
@@ -63,7 +100,13 @@ function Cart() {
                                 <strong>{cart.price}</strong>
                               </td>
                               <td className="border-0 align-middle">
-                                <strong>3</strong>
+                                {/* <strong>3</strong> */}
+                                <input
+                                  type="number"
+                                  className="form-control form-control-sm"
+                                  value={cart.quantity}
+                                  onChange={handleQuantityChange}
+                                />
                                 <input type="number " />
                               </td>
                               <td className="border-0 align-middle">
@@ -162,7 +205,7 @@ function Cart() {
                       </li>
                       <li className="d-flex justify-content-between py-3 border-bottom">
                         <strong className="text-muted">Total</strong>
-                        <h5 className="font-weight-bold">$400.00</h5>
+                        <h5 className="font-weight-bold">${sum}</h5>
                       </li>
                     </ul>
                     <a
