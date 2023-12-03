@@ -2,51 +2,39 @@
 // import { FeatureBooksJson } from '../json/FeatureBooksJson'
 // import FeatureBooksRender from "../json/FeatureBooksJson";
 
+import { useEffect, useState } from "react";
 import FeatureBooksRender from "./FeatureBooksRender";
+import fetchNewBooks from "../api/defaultNewBookApi";
 
 export default function FeatureBooks() {
+  const [newBooks, setNewBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetchNewBooks();
+      setNewBooks(result);
+      // console.log(result);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="container" style={{ marginTop: 28 }}>
       <div className="row d-xl-flex justify-content-xl-center">
         <div className="col-xl-3">
-          <div>
-            <p
-              className="d-xl-flex justify-content-xl-center"
-              style={{ fontWeight: "bold", fontSize: 19 }}
-            >
-              NEW ARRIVALS
-            </p>
-          </div>
-        </div>
-        <div className="col-xl-3">
           <div />
           <p
             className="d-xl-flex justify-content-xl-center"
-            style={{ fontWeight: "bold", fontSize: 19 }}
+            style={{ fontWeight: "bold", fontSize: 30 }}
           >
-            FEATURED PRODUCTS
-          </p>
-        </div>
-        <div className="col-xl-3">
-          <div />
-          <p
-            className="d-xl-flex justify-content-xl-center"
-            style={{ fontWeight: "bold", fontSize: 19 }}
-          >
-            STAFF PICKS
+            Our New Books
           </p>
         </div>
       </div>
-      <div className="row row-cols-2 d-xl-flex justify-content-xl-center">
-        <div className="col-xl-3">
-          <FeatureBooksRender from={0} to={4} />
-        </div>
-        <div className="col-xl-3">
-          <FeatureBooksRender from={4} to={8} />
-        </div>
-        <div className="col-xl-3">
-          <FeatureBooksRender from={8} to={12} />
-        </div>
+      <div className="row row-cols-1 d-xl-flex justify-content-xl-center">
+        <FeatureBooksRender newBooks={newBooks} />
+        {/* </div> */}
       </div>
     </div>
   );
