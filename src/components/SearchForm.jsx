@@ -12,9 +12,9 @@ export default function SearchForm({ onSubmit }) {
   function handleChange(event) {
     setTerm(event.target.value);
   }
-  
+
   return (
-    <div className="col-3 mx-auto mt-4">
+    <div className="col-4 mx-auto mt-5">
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <input
