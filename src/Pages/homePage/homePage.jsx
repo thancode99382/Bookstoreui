@@ -18,6 +18,12 @@ export default function Body() {
     setBooks(result);
   }
 
+  const [field, setField] = useState("bestSellers");
+
+  function handleButtonClick(fieldClick) {
+    setField(fieldClick);
+  }
+
   return (
     <>
       <div className="container-fluid">
@@ -284,45 +290,45 @@ export default function Body() {
               INTERESTING BOOKS
             </h1>
             <div className="filtr-controls text-center lead text-uppercase mb-3">
-              <span
+              <button
                 className="d-inline-block mx-3 py-1 position-relative"
-                data-filter={1}
                 style={{
                   padding: 5,
                   background: "#229955",
                   color: "var(--bs-body-bg)",
                   fontWeight: "bold",
                 }}
+                onClick={() => handleButtonClick("bestSellers")}
               >
                 BEST SELLER
-              </span>
-              <span
+              </button>
+              <button
                 className="d-inline-block mx-3 py-1 position-relative"
-                data-filter={2}
                 style={{
                   padding: 5,
                   background: "#229955",
                   color: "var(--bs-body-bg)",
                   fontWeight: "bold",
                 }}
+                onClick={() => handleButtonClick("ebooks")}
               >
                 E-Books
-              </span>
-              <span
+              </button>
+              <button
                 className="d-inline-block mx-3 py-1 position-relative"
-                data-filter={3}
                 style={{
                   padding: 5,
                   background: "#229955",
                   color: "var(--bs-body-bg)",
                   fontWeight: "bold",
                 }}
+                onClick={() => handleButtonClick("textBooks")}
               >
                 Text books
-              </span>
+              </button>
             </div>
             <div className="row filtr-container">
-              <InterestingBooks />
+              <InterestingBooks field={field} />
             </div>
           </div>
         </section>

@@ -5,7 +5,6 @@ export const exclusiveBooks = [
       "A&nbsp; Defining Moment in Space Exploration An exhaustive account of the harrowing Apollo 13 mission using  interviews with key figures and newly available archival material to  provide a definitive behind-the-scenes look.",
     image: "/assets/img/9780618056651-4241336187.jpg",
   },
-
   {
     title: "Nomadland",
     summary:

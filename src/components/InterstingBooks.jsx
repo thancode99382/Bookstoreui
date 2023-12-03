@@ -1,43 +1,22 @@
-import { interestingBookJson } from "../json/InterestingBooksJson.jsx";
+// import { interestingBookJson } from "../json/InterestingBooksJson.jsx";
+import { books } from "../json/booksInteresting";
+import PropTypes from "prop-types";
+import ShowInterstingBook from "./ShowInterstingBook";
 
-export default function InterstingBooks() {
+export default function InterstingBooks({ field }) {
   return (
     <>
-      {interestingBookJson.map((interestingBook, index) => (
-        <div
-          className="col-md-6 col-lg-4 filtr-item"
-          data-category="2,3"
-          key={index}
-        >
-          <div className="card border-dark">
-            <div className="card-header bg-success text-light">
-              <h5 className="m-0">{interestingBook.title}</h5>
-            </div>
-            <img
-              className="img-fluid card-img w-100 d-block rounded-0"
-              src={interestingBook.image}
-            />
-            <div className="card-body">
-              <p className="card-text" style={{ paddingTop: 0 }}>
-                {interestingBook.summary}
-              </p>
-            </div>
-            <div className="d-flex card-footer">
-              <button className="btn btn-dark btn-sm" type="button">
-                <i className="fa fa-eye" />
-                &nbsp;Learn more
-              </button>
-              <button
-                className="btn btn-outline-dark btn-sm ms-auto"
-                type="button"
-              >
-                <i className="fa fa-plus" />
-                &nbsp;Add to cart
-              </button>
-            </div>
+      {books[field].map((book) => {
+        return (
+          <div key={book.isbn13} className="col-md-6 col-lg-4 filtr-item">
+            <ShowInterstingBook book={book} />
           </div>
-        </div>
-      ))}
+        );
+      })}
     </>
   );
 }
+
+InterstingBooks.propTypes = {
+  field: PropTypes.string.isRequired,
+};
