@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-
-export default function BookShow({ book }) {
+export default function BookShow({ book, addToCart }) {
   return (
     <div className="card m-4">
       <img className="card-img-top" src={book.image} alt={book.title} />
@@ -9,9 +8,15 @@ export default function BookShow({ book }) {
         <h5 className="card-title">{book.title}</h5>
         <p className="card-text text-muted">{book.subtitle}</p>
         <div className="d-flex justify-content-between align-items-center">
-          <p className="card-text text-success h5">{book.price}</p>
+          <p className="card-text text-success h5">{book.price }{console.log(book)}</p>
 
-          <button className="btn btn-outline-dark">Add to cart</button>
+          <button
+            className="btn btn-outline-dark"
+            onClick={() => addToCart(book)}
+            
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
@@ -20,4 +25,5 @@ export default function BookShow({ book }) {
 
 BookShow.propTypes = {
   book: PropTypes.any.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
