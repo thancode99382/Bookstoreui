@@ -3,6 +3,7 @@ import { CartContext } from "../../components/CartContext";
 function Cart() {
   const { cartItems } = useContext(CartContext);
   const { removeFromCart } = useContext(CartContext);
+  console.log(cartItems);
   return (
     <div className="container">
       <div className="shopping-cart">
@@ -81,6 +82,14 @@ function Cart() {
                       </tbody>
                     </table>
                   </div>
+                  {cartItems.length === 0 && (
+                    <p>
+                      <i>
+                        Unfortunately, it appears that you do not currently have
+                        any products 😥
+                      </i>
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="row py-5 p-4 bg-white rounded shadow-sm">
