@@ -63,6 +63,7 @@ function Cart() {
                               </td>
                               <td className="border-0 align-middle">
                                 <strong>3</strong>
+                                <input type="number " />
                               </td>
                               <td className="border-0 align-middle">
                                 <a className="text-dark" href="#">
