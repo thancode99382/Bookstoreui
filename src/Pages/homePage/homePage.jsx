@@ -1292,7 +1292,7 @@ export default function Body() {
               className="py-4 py-xl-5"
               style={{paddingTop: 0, paddingBottom: 0}}
           >
-            <div className="container-fluid">
+            {/* <div className="container-fluid">
               <div
                   className="text-white border rounded border-0 border-light d-flex flex-column justify-content-between align-items-center flex-lg-row p-4 p-lg-5"
                   data-bs-theme="light"
@@ -1323,7 +1323,7 @@ export default function Body() {
                   </div>
                 </form>
               </div>
-            </div>
+            </div> */}
           </section>
         </div>
       </>
