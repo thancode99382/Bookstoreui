@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
 import ShowNewBook from "./ShowNewBooks";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 
 const FeatureBooksRender = ({ newBooks }) => {
+  const { addToCart } = useContext(CartContext);
   return (
     <div
       style={{
@@ -12,7 +15,7 @@ const FeatureBooksRender = ({ newBooks }) => {
     >
       {newBooks.map((newBook) => (
         <div key={newBook.isbn13}>
-          <ShowNewBook newBook={newBook} />
+          <ShowNewBook newBook={newBook} addToCart={addToCart} />
         </div>
       ))}
     </div>

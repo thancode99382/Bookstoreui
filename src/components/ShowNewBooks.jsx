@@ -1,5 +1,14 @@
 import PropTypes from "prop-types";
-export default function ShowNewBook({ newBook }) {
+import { useState } from "react";
+
+
+export default function ShowNewBook({ newBook, addToCart }) {
+
+  const [isAddToCart, setIsAddToCart] = useState(false);
+
+  function handleIsAddCart() {
+    setIsAddToCart(true);
+  }
   return (
     <div className="card">
       <img src={newBook.image} className="card-img-top" alt={newBook.title} />
@@ -16,13 +25,21 @@ export default function ShowNewBook({ newBook }) {
           >
             More Info
           </a>
-          <a
+          <button
             href=""
             className="btn btn-outline-dark"
             style={{ marginLeft: "10px" }}
+            onClick={() => {
+              addToCart(newBook);
+              handleIsAddCart();
+            }}
           >
-            Add to cart
-          </a>
+            {isAddToCart ? (
+              <i className="bi bi-cart-check-fill"></i>
+            ) : (
+              "Add to cart"
+            )}
+          </button>
         </div>
       </div>
     </div>
@@ -31,4 +48,5 @@ export default function ShowNewBook({ newBook }) {
 
 ShowNewBook.propTypes = {
   newBook: PropTypes.any.isRequired,
+  addToCart: PropTypes.any.isRequired
 };
