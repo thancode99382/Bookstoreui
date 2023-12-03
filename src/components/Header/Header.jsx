@@ -55,7 +55,7 @@ export default function Header() {
                       <a
                         className="nav-link active link-light"
                         href="#"
-                        style={{ fontWeight: "bold", marginRight: "10px;" }}
+                        style={{ fontWeight: "bold", marginRight: "10px" }}
                       >
                         Home
                       </a>
@@ -73,7 +73,7 @@ export default function Header() {
                       <a
                         className="nav-link link-light"
                         href="#"
-                        style={{ fontWeight: "bold", marginRight: "10px;" }}
+                        style={{ fontWeight: "bold", marginRight: "10px" }}
                       >
                         Ebook
                       </a>
@@ -82,7 +82,7 @@ export default function Header() {
                       <a
                         className="nav-link link-light"
                         href="#"
-                        style={{ fontWeight: "bold", marginRight: "10px;" }}
+                        style={{ fontWeight: "bold", marginRight: "10px" }}
                       >
                         subcirption
                       </a>
@@ -91,7 +91,7 @@ export default function Header() {
                       <a
                         className="nav-link link-light"
                         href="#"
-                        style={{ fontWeight: "bold", marginRight: "10px;" }}
+                        style={{ fontWeight: "bold", marginRight: "10px" }}
                       >
                         features
                       </a>
@@ -100,7 +100,7 @@ export default function Header() {
                       <a
                         className="nav-link link-light"
                         href="#"
-                        style={{ fontWeight: "bold", marginRight: "10px;" }}
+                        style={{ fontWeight: "bold", marginRight: "10px" }}
                       >
                         pages
                       </a>
@@ -109,13 +109,13 @@ export default function Header() {
                       <a
                         className="nav-link link-light"
                         href="#"
-                        style={{ fontWeight: "bold", marginRight: "10px;" }}
+                        style={{ fontWeight: "bold", marginRight: "10px" }}
                       >
                         K2 Blog
                       </a>
                     </li>
                   </ul>
-                  <i className="fa fa-search" style={{ fontSize: "28px;" }}></i>
+                  <i className="fa fa-search" style={{ fontSize: "28px" }}></i>
                 </div>
               </div>
             </nav>
