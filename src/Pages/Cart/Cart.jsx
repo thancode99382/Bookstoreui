@@ -42,7 +42,7 @@ function Cart() {
   //   console.log(cartItems);
   console.log(cartItems);
   return (
-    <div className="container">
+    <div className="container ">
       <div className="shopping-cart">
         <div className="px-4 px-lg-0">
           <div className="pb-5">
@@ -107,7 +107,7 @@ function Cart() {
                                   value={cart.quantity}
                                   onChange={handleQuantityChange}
                                 />
-                                <input type="number " />
+                               
                               </td>
                               <td className="border-0 align-middle">
                                 <a className="text-dark" href="#">

@@ -12,9 +12,14 @@ import BookList from "../../components/BookList.jsx";
 
 export default function Body() {
   const [books, setBooks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleSubmit(term) {
+    setIsLoading(true);
     const result = await searchBooks(term);
+    if (result) {
+      setIsLoading(false);
+    }
     setBooks(result);
   }
 
@@ -26,7 +31,7 @@ export default function Body() {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid" >
         <Accordion />
         <section
           className="d-xl-flex justify-content-xl-center"
@@ -291,37 +296,20 @@ export default function Body() {
             </h1>
             <div className="filtr-controls text-center lead text-uppercase mb-3">
               <button
-                className="d-inline-block mx-3 py-1 position-relative"
-                style={{
-                  padding: 5,
-                  background: "#229955",
-                  color: "var(--bs-body-bg)",
-                  fontWeight: "bold",
-                }}
+                className="btn-interting-book"
                 onClick={() => handleButtonClick("bestSellers")}
               >
                 BEST SELLER
               </button>
+
               <button
-                className="d-inline-block mx-3 py-1 position-relative"
-                style={{
-                  padding: 5,
-                  background: "#229955",
-                  color: "var(--bs-body-bg)",
-                  fontWeight: "bold",
-                }}
+                className="btn-interting-book"
                 onClick={() => handleButtonClick("ebooks")}
               >
                 E-Books
               </button>
               <button
-                className="d-inline-block mx-3 py-1 position-relative"
-                style={{
-                  padding: 5,
-                  background: "#229955",
-                  color: "var(--bs-body-bg)",
-                  fontWeight: "bold",
-                }}
+                className="btn-interting-book"
                 onClick={() => handleButtonClick("textBooks")}
               >
                 Text books
@@ -445,6 +433,14 @@ export default function Body() {
       </div>
       <FeatureBooks />
       <SearchForm onSubmit={handleSubmit} />
+      {isLoading && (
+        <div className="loader mx-auto mt-5">
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+        </div>
+      )}
       <BookList books={books} />
       <div className="container py-4 py-xl-5">
         <div className="row mb-5">

@@ -4,7 +4,10 @@ export default function Header() {
   return (
     <div
       className="container-fluid"
-      style={{ paddingLeft: "0px", paddingRight: "0px" }}
+      style={{
+        paddingLeft: "0px",
+        paddingRight: "0px",
+      }}
     >
       <header>
         <div
@@ -24,10 +27,10 @@ export default function Header() {
             >
               Currency
             </button>
-            <button className="btn btn-outline-dark" type="button">
-              {/* <Link to={config.routes.cart}>Cart</Link> */}
-              <Link to={config.routes.cart}>Cart</Link>
-            </button>
+
+            <Link to={config.routes.cart} className="btn btn-outline-dark">
+              Cart
+            </Link>
           </div>
         </div>
         <div className="row g-0">
