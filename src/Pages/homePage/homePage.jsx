@@ -307,20 +307,24 @@ export default function Body() {
             </h1>
             <div className="filtr-controls text-center lead text-uppercase mb-3">
               <button
-                className="btn-interting-book"
+                type="button"
+                className="btn btn-outline-success border-2"
+                style={{ width: "150px", marginRight: "20px" }}
                 onClick={() => handleButtonClick("bestSellers")}
               >
                 BEST SELLER
               </button>
 
               <button
-                className="btn-interting-book"
+                className="btn btn-outline-success border-2"
+                style={{ width: "150px", marginRight: "20px" }}
                 onClick={() => handleButtonClick("ebooks")}
               >
                 E-Books
               </button>
               <button
-                className="btn-interting-book"
+                className="btn btn-outline-success border-2"
+                style={{ width: "150px", marginRight: "20px" }}
                 onClick={() => handleButtonClick("textBooks")}
               >
                 Text books
