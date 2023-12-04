@@ -23,7 +23,7 @@ export default function ShowNewBook({ newBook, addToCart }) {
         <div className="d-flex">
           <Link
             className="btn btn-outline-dark"
-            to={config.routes.learnmore}
+            to={`${config.routes.learnmore}/${newBook.isbn13}`}
             onClick={() => {
               setProduct(newBook);
             }}
