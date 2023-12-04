@@ -6,7 +6,7 @@ export default function SearchForm({ onSubmit }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    onSubmit(term);
+    onSubmit(term, 1);
   }
 
   function handleChange(event) {

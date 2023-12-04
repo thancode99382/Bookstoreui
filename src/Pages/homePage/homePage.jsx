@@ -7,20 +7,27 @@ import Pagination from "../../components/Pagination.jsx";
 import Blog from "../../components/Blog.jsx";
 import SearchForm from "../../components/SearchForm.jsx";
 import searchBooks from "../../api/searchBookApi.js";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BookList from "../../components/BookList.jsx";
 
 export default function Body() {
   const [books, setBooks] = useState([]);
+  const [totalElements, setTotalElements] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [termSearching, setTermSearching] = useState("");
+  const ref = useRef(null);
+  const [pageChange, setPageChange] = useState(0);
 
-  async function handleSubmit(term) {
+  async function handleSubmit(term, page) {
     setIsLoading(true);
-    const result = await searchBooks(term);
+    const result = await searchBooks(term, page);
     if (result) {
       setIsLoading(false);
+      setTotalElements(result.total);
+      setTermSearching(term);
     }
-    setBooks(result);
+    setPageChange(page);
+    setBooks(result.books);
   }
 
   const [field, setField] = useState("bestSellers");
@@ -29,9 +36,13 @@ export default function Body() {
     setField(fieldClick);
   }
 
+  useEffect(() => {
+    ref.current.scrollIntoView();
+  }, [termSearching, pageChange]);
+
   return (
     <>
-      <div className="container-fluid" >
+      <div className="container-fluid">
         <Accordion />
         <section
           className="d-xl-flex justify-content-xl-center"
@@ -432,16 +443,32 @@ export default function Body() {
         </div>
       </div>
       <FeatureBooks />
-      <SearchForm onSubmit={handleSubmit} />
-      {isLoading && (
-        <div className="loader mx-auto mt-5">
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-        </div>
+      <div ref={ref}>
+        <SearchForm onSubmit={handleSubmit} />
+        {isLoading && (
+          <div className="loader mx-auto mt-5">
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="circle"></div>
+          </div>
+        )}
+      </div>
+
+      <BookList
+        books={books}
+        totalElements={totalElements}
+        handleSubmit={handleSubmit}
+      />
+
+      {totalElements > 0 && (
+        <Pagination
+          onSubmit={handleSubmit}
+          totalElements={parseInt(totalElements)}
+          term={termSearching}
+        />
       )}
-      <BookList books={books} />
+
       <div className="container py-4 py-xl-5">
         <div className="row mb-5">
           <div className="col-md-8 col-xl-6 text-center mx-auto">
@@ -452,7 +479,6 @@ export default function Body() {
           </div>
         </div>
         <Blog />
-        <Pagination />
       </div>
       <SubscribeNewsletter />
     </>

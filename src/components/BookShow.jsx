@@ -9,17 +9,14 @@ export default function BookShow({ book, addToCart }) {
   }
 
   return (
-    <div className="card m-4">
+    <div className="card m-1">
       <img className="card-img-top" src={book.image} alt={book.title} />
 
       <div className="card-body">
         <h5 className="card-title">{book.title}</h5>
         <p className="card-text text-muted">{book.subtitle}</p>
         <div className="d-flex justify-content-between align-items-center">
-          <p className="card-text text-success h5">
-            {book.price}
-            {console.log(book)}
-          </p>
+          <p className="card-text text-success h5">{book.price}</p>
 
           <button
             className={"btn btn-outline-dark"}

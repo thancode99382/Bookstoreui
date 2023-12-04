@@ -54,5 +54,5 @@ export default function ShowInterstingBook({ book }) {
 }
 
 ShowInterstingBook.propTypes = {
-  book: PropTypes.array.isRequired,
+  book: PropTypes.any.isRequired,
 };

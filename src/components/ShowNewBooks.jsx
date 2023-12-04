@@ -1,14 +1,13 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-
 export default function ShowNewBook({ newBook, addToCart }) {
-
   const [isAddToCart, setIsAddToCart] = useState(false);
 
   function handleIsAddCart() {
     setIsAddToCart(true);
   }
+
   return (
     <div className="card">
       <img src={newBook.image} className="card-img-top" alt={newBook.title} />
@@ -48,5 +47,5 @@ export default function ShowNewBook({ newBook, addToCart }) {
 
 ShowNewBook.propTypes = {
   newBook: PropTypes.any.isRequired,
-  addToCart: PropTypes.any.isRequired
+  addToCart: PropTypes.any.isRequired,
 };

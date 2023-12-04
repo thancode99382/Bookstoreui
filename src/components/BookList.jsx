@@ -8,7 +8,7 @@ export default function BookList({ books }) {
   return (
     <div className="book-list row mt-5">
       {books.map((book) => (
-        <div className="col-md-4" key={book.isbn13}>
+        <div className="col-md-3" key={book.isbn13}>
           <BookShow book={book} addToCart={addToCart} />
         </div>
       ))}
