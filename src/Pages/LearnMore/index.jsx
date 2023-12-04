@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { CardProductContext } from "../../components/CardProductProvider";
 function LearnMore() {
   const { cardProduct } = useContext(CardProductContext);
+  console.log(cardProduct);
+ 
   return (
     <div className="container border border-2 mt-5 p-5 rounded">
       <div className="row">
