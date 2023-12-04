@@ -8,16 +8,26 @@ function Cart() {
   const [sum, setSum] = useState(0);
   //   const [quantity, setQuantity] = useState(1);
 
-  function handleQuantityChange(book) {
-    const existing = cartItems.find((item) => item.isbn13 === book.isbn13);
-    if (existing) {
-      setCartItems((items) => {
-        existing.quantity++;
-        return [...items];
+  function handleQuantityChange(cartIsbn13, value) {
+    setCartItems((pCart) => {
+      return pCart.map((cartItem) => {
+        if (cartItem.isbn13 === cartIsbn13) {
+          const priceCart = parseFloat(cartItem.price.replace("$", ""));
+          cartItem.price = `${priceCart * value}`;
+          cartItem.quantity = value;
+        }
+        return cartItem;
       });
-    } else {
-      setCartItems((items) => [...items, { ...book, quantity: 1 }]);
-    }
+    });
+    // const existing = cartItems.find((item) => item.isbn13 === book.isbn13);
+    // if (existing) {
+    //   setCartItems((items) => {
+    //     existing.quantity++;
+    //     return [...items];
+    //   });
+    // } else {
+    //   setCartItems((items) => [...items, { ...book, quantity: 1 }]);
+    // }
   }
 
   function calculateSum(books) {
@@ -105,9 +115,13 @@ function Cart() {
                                   type="number"
                                   className="form-control form-control-sm"
                                   value={cart.quantity}
-                                  onChange={handleQuantityChange}
+                                  onChange={(e) =>
+                                    handleQuantityChange(
+                                      cart.isbn13,
+                                      e.target.value
+                                    )
+                                  }
                                 />
-                               
                               </td>
                               <td className="border-0 align-middle">
                                 <a className="text-dark" href="#">
