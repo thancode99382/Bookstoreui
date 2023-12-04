@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import config from "../config";
 
-export default function BookShow({ book, addToCart }) {
+export default function BookShow({ book, addToCart, setProduct }) {
   const [isAddToCart, setIsAddToCart] = useState(false);
 
   function handleIsAddCart() {
@@ -10,7 +12,16 @@ export default function BookShow({ book, addToCart }) {
 
   return (
     <div className="card m-4">
-      <img className="card-img-top" src={book.image} alt={book.title} />
+      <Link to={config.routes.learnmore}  onClick={() => {
+            setProduct(book);
+          }}>
+        <img
+          className="card-img-top"
+          src={book.image}
+          alt={book.title}
+         
+        />{" "}
+      </Link>
 
       <div className="card-body">
         <h5 className="card-title">{book.title}</h5>
@@ -43,9 +54,5 @@ export default function BookShow({ book, addToCart }) {
 BookShow.propTypes = {
   book: PropTypes.any.isRequired,
   addToCart: PropTypes.func.isRequired,
-};
-
-BookShow.propTypes = {
-  book: PropTypes.any.isRequired,
-  addToCart: PropTypes.func.isRequired,
+  setProduct: PropTypes.any.isRequired,
 };
