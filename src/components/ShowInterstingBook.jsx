@@ -1,6 +1,14 @@
 import PropTypes from "prop-types";
-
+import { useContext, useState } from "react";
+import { CartContext } from "./CartContext";
 export default function ShowInterstingBook({ book }) {
+  const { addToCart } = useContext(CartContext);
+  const [isAddToCart, setIsAddToCart] = useState(false);
+
+  function handleIsAddCart() {
+    setIsAddToCart(true);
+  }
+
   return (
     <div>
       <>
@@ -26,9 +34,16 @@ export default function ShowInterstingBook({ book }) {
               <button
                 className="btn btn-outline-dark btn-sm ms-auto"
                 type="button"
+                onClick={() => {
+                  addToCart(book);
+                  handleIsAddCart();
+                }}
               >
-                <i className="fa fa-plus" />
-                &nbsp;Add to cart
+                {isAddToCart ? (
+                  <i className="bi bi-cart-check-fill"></i>
+                ) : (
+                  "Add to cart"
+                )}
               </button>
             </div>
           </div>
