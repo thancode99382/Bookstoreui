@@ -3,8 +3,8 @@
 // import FeatureBooksRender from "../json/FeatureBooksJson";
 
 import { useEffect, useState } from "react";
-import FeatureBooksRender from "./FeatureBooksRender";
-import fetchNewBooks from "../api/defaultNewBookApi";
+import FeatureBooksRender from "./FeatureBooksRender.jsx";
+import fetchNewBooks from "../../api/defaultNewBookApi.js";
 
 export default function FeatureBooks() {
   const [newBooks, setNewBooks] = useState([]);
@@ -13,7 +13,6 @@ export default function FeatureBooks() {
     const fetchData = async () => {
       const result = await fetchNewBooks();
       setNewBooks(result);
-      // console.log(result);
     };
 
     fetchData();

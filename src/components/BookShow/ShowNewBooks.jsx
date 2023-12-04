@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import config from "../config";
-import { CardProductContext } from "./CardProductProvider";
+import config from "../../config/index.js";
+import { CardProductContext } from "../Cart/CardProductProvider.jsx";
 import { useContext } from "react";
 
 export default function ShowNewBook({ newBook, addToCart }) {

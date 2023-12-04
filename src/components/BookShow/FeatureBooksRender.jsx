@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import ShowNewBook from "./ShowNewBooks";
+import ShowNewBook from "./ShowNewBooks.jsx";
 import { useContext } from "react";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../Cart/CartContext.jsx";
 
 const FeatureBooksRender = ({ newBooks }) => {
   const { addToCart } = useContext(CartContext);

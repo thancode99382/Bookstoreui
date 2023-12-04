@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { CardProductContext } from "../../components/CardProductProvider";
-import CardReview from "../../components/CardReview.jsx";
+import { CardProductContext } from "../../components/Cart/CardProductProvider.jsx";
+import CardReview from "../../components/Cart/CardReview.jsx";
 
 function LearnMore() {
   const { cardProduct } = useContext(CardProductContext);
