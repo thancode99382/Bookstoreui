@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import config from "../../config";
 import Navbar from "./Navbar";
 export default function Header() {
+
+  const userName = localStorage.getItem('username')
+
   return (
     <div
       className="container-fluid"
@@ -10,6 +13,7 @@ export default function Header() {
         paddingRight: "0px",
       }}
     >
+
       <header className="bg-white">
         <div
           className="row d-xl-flex justify-content-xl-center align-items-xl-center"
@@ -35,6 +39,7 @@ export default function Header() {
           </div>
         </div>
         <Navbar />
+        {userName && <p>Hello user: {userName}</p>}
       </header>
     </div>
   );

@@ -3,8 +3,13 @@ import config from "../config";
 import homePage from "../Pages/homePage/homePage";
 import Cart from "../Pages/Cart/Cart";
 import LearnMore from "../Pages/LearnMore";
+import Register from "../components/Form/Register.jsx";
+import Login from "../components/Form/Login.jsx";
+
 export const publicRoutes = [
-  { path: config.routes.homePage, component: homePage },
-  { path: config.routes.cart, component: Cart },
-  { path: `${config.routes.learnmore}/:id`, component: LearnMore },
+  {path: config.routes.homePage, component: homePage},
+  {path: config.routes.cart, component: Cart},
+  {path: `${config.routes.learnmore}/:id`, component: LearnMore},
+  {path: config.routes.register, component: Register},
+  {path: config.routes.login, component: Login}
 ];

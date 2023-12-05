@@ -27,6 +27,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <App/>
         </CardProductProvider>
       </CartProvider>
-      <Register/>
+
     </React.StrictMode>
 );

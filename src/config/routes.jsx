@@ -1,5 +1,7 @@
 export const routes = {
   homePage: "/",
   cart: "/cart",
-  learnmore: "/learnmore", // Add the parameter ":id" to the route
+  learnmore: "/learnmore",
+  register: "/register",
+  login: "/login"
 };

@@ -50,7 +50,7 @@ export default function Pagination({ onSubmit, totalElements, term }) {
             onClick={onNextClick}
           >
             <span>Next</span>
-            <img src="/assets/img/icon_arrow-right.svg" />np
+            <img src="/assets/img/icon_arrow-right.svg" />
           </button>
         </div>
         <div className="col text-center">

@@ -8,6 +8,7 @@ function LearnMore() {
   const { cardProduct } = useContext(CardProductContext);
   const [notitran, setnotitran] = useState("415px");
   const { addToCart } = useContext(CartContext);
+
   return (
     <>
       <div className="noti" style={{ transform: `translate(${notitran},0)` }}>
