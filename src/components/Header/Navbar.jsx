@@ -1,4 +1,10 @@
+import User from "../Form/User";
+
 export default function Navbar() {
+
+  const userName = localStorage.getItem('username')
+
+
   return (
     <div className="row g-0">
       <div className="col">
@@ -87,6 +93,7 @@ export default function Navbar() {
               </ul>
               <i className="fa fa-search" style={{ fontSize: "28px" }}></i>
             </div>
+            {userName && <User/>}
           </div>
         </nav>
       </div>

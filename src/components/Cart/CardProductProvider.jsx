@@ -24,6 +24,7 @@ function CardProductProvider({ children }) {
     </CardProductContext.Provider>
   );
 }
+
 CardProductProvider.propTypes = {
   children: propTypes.node.isRequired,
 };

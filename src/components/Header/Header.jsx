@@ -3,7 +3,6 @@ import config from "../../config";
 import Navbar from "./Navbar";
 export default function Header() {
 
-  const userName = localStorage.getItem('username')
 
   return (
     <div
@@ -39,7 +38,6 @@ export default function Header() {
           </div>
         </div>
         <Navbar />
-        {userName && <p>Hello user: {userName}</p>}
       </header>
     </div>
   );

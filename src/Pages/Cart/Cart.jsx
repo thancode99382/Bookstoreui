@@ -13,7 +13,7 @@ function Cart() {
         (item) => item.isbn13 === book.isbn13
       );
       if (existingBook) {
-        existingBook.quantity = newQuantity;
+        existingBook.quantity = parseInt(newQuantity);
       }
       return [...prevItems];
     });

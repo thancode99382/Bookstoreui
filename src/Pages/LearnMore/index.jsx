@@ -9,6 +9,8 @@ function LearnMore() {
   const [notitran, setnotitran] = useState("415px");
   const { addToCart } = useContext(CartContext);
 
+  // console.log(cardProduct);
+
   return (
     <>
       <div className="noti" style={{ transform: `translate(${notitran},0)` }}>
