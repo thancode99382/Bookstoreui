@@ -10,8 +10,8 @@ export default function Footer() {
 export default function Footer() {
   return (
     <div>
-      <div className="container">
-        <footer style={{ paddingTop: "50px" }}>
+      <div className="container-fluit bg-white mt-5">
+        <footer className="container" style={{ paddingTop: "50px" }}>
           <div className="row">
             <div className="col">
               <div className="row">

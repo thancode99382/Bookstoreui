@@ -302,7 +302,7 @@ export default function Body() {
       </div>
       <div className="container">
         <section className="py-5">
-          <div className="container">
+          <div className="container rounded p-5 bg-white " >
             <h1 className="text-center mb-4" style={{ color: "#229955" }}>
               INTERESTING BOOKS
             </h1>
@@ -331,7 +331,7 @@ export default function Body() {
                 Text books
               </button>
             </div>
-            <div className="row filtr-container">
+            <div className="row filtr-container ">
               <InterestingBooks field={field} />
             </div>
           </div>

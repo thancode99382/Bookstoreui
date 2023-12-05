@@ -2,9 +2,10 @@ import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { CartContext } from "../Cart/CartContext.jsx";
 import config from "../../config/index.js";
-
+import { CardProductContext } from "../Cart/CardProductProvider.jsx";
 export default function ShowInterstingBook({ book }) {
   const { addToCart } = useContext(CartContext);
+  const { setProduct } = useContext(CardProductContext);
   const [isAddToCart, setIsAddToCart] = useState(false);
 
   function handleIsAddCart() {
@@ -31,6 +32,9 @@ export default function ShowInterstingBook({ book }) {
             <div className="d-flex card-footer">
               <a
                 href={`${config.routes.learnmore}/${book.isbn13}`}
+                onClick={() => {
+                  setProduct(book);
+                }}
                 className="btn btn-dark btn-sm"
               >
                 <i className="fa fa-eye" />
