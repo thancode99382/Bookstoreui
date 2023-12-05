@@ -8,7 +8,6 @@ const CartProvider = ({children}) => {
 
   const addToCart = (book) => {
     // check the book is already exist
-
     // setCartItems([...cartItems, book]);
     setCartItems(prevItems => {
       const existingBook = prevItems.find(item => item.isbn13 === book.isbn13);

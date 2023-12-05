@@ -1,32 +1,63 @@
 import {useState} from "react";
+import {Link} from "react-router-dom";
+import config from "../../config/index.js";
 
 export default function Register() {
-  const [user, setUser] = useState({ username: "", password: "" });
+  const [user, setUser] = useState({username: "", password: ""});
+  const [isRegistered, setIsRegistered] = useState(false)
+  const [confirmPassword, setConfirmPassword] = useState('')
 
   function handleUserChange(event) {
     const {name, value} = event.target
     setUser((prevUser) => ({...prevUser, [name]: value}))
   }
 
+  function handleConfirmPasswordChange(event) {
+    setConfirmPassword(event.target.value)
+  }
+
+  const Button = () => (
+      <div>
+        <Link to={config.routes.login} className={"btn btn-success mt-1"}>Login now</Link>
+      </div>
+  );
+
   function handleSubmit(event) {
     event.preventDefault()
-    if (user.username !== '' && user.password !== '') {
+    if (user.username !== '' && user.password !== '' && user.password === confirmPassword) {
       localStorage.setItem('username', user.username)
       localStorage.setItem('password', user.password)
-    } else {
+      setIsRegistered(true)
+    } else if (user.password !== confirmPassword) {
+      alert("Passwords do not match.")
+    }
+    else {
       alert("Please fill in both fields")
     }
   }
 
   return (
-      <div>
-        <form onSubmit={handleSubmit}>
-          <label>username</label>
-          <input value={user.username} type="text" name={'username'} onChange={handleUserChange}/>
+      <div className="container col-4">
+        <h1>Register</h1>
+        <form onSubmit={handleSubmit} className="mt-5">
+          <div className="mb-3">
+            <label htmlFor="username" className="form-label">Username</label>
+            <input value={user.username} type="text" name={'username'} onChange={handleUserChange}
+                   className="form-control" id="username"/>
+          </div>
 
-          <label>password</label>
-          <input value={user.password} type="password" name={'password'} onChange={handleUserChange}/>
-          <button type={'submit'}>Submit</button>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">Password</label>
+            <input value={user.password} type="password" name={'password'} onChange={handleUserChange}
+                   className="form-control" id="password"/>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">Confirm your password</label>
+            <input value={confirmPassword} type="password" name={'confirmPassword'} onChange={handleConfirmPasswordChange}
+                   className="form-control" id="password"/>
+          </div>
+          <button type={'submit'} className="btn btn-primary">Register</button>
+          {isRegistered && <Button/>}
         </form>
       </div>
   )
