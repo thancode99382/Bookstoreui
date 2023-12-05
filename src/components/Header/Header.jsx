@@ -10,7 +10,7 @@ export default function Header() {
         paddingRight: "0px",
       }}
     >
-      <header>
+      <header className="bg-white">
         <div
           className="row d-xl-flex justify-content-xl-center align-items-xl-center"
           style={{ height: "90px" }}

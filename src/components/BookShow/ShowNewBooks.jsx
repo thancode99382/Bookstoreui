@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import config from "../../config/index.js";
 import { CardProductContext } from "../Cart/CardProductProvider.jsx";
 import { useContext } from "react";
@@ -21,16 +20,16 @@ export default function ShowNewBook({ newBook, addToCart }) {
         <p className="card-text">ISBN: {newBook.isbn13}</p>
         <p className="card-text text-success">Price: {newBook.price}</p>
         <div className="d-flex">
-          <Link
+          <a
             className="btn btn-outline-dark"
-            to={`${config.routes.learnmore}/${newBook.isbn13}`}
+            href={`${config.routes.learnmore}/${newBook.isbn13}`}
             onClick={() => {
               setProduct(newBook);
             }}
           >
             {" "}
             More Info
-          </Link>
+          </a>
           <button
             href=""
             className="btn btn-outline-dark"

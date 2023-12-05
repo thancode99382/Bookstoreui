@@ -1,13 +1,35 @@
 import { useContext } from "react";
 import { CardProductContext } from "../../components/Cart/CardProductProvider.jsx";
 import CardReview from "../../components/Cart/CardReview.jsx";
+import { useState } from "react";
+import { CartContext } from "../../components/Cart/CartContext.jsx";
 
 function LearnMore() {
   const { cardProduct } = useContext(CardProductContext);
-
+  const [notitran, setnotitran] = useState("415px");
+  const { addToCart } = useContext(CartContext);
   return (
     <>
-      <div className="container border border-2 mt-5 p-2 rounded">
+      <div className="noti" style={{ transform: `translate(${notitran},0)` }}>
+        <div className="toast__icon">
+          <i className="bi bi-bag-check"></i>
+        </div>
+
+        <div className="toast__body">
+          <h3 className="toast__title">Thành Công</h3>
+          <p className="toast__msg">Bạn đã thêm sản phẩm </p>
+        </div>
+
+        <div
+          className="toast__close"
+          onClick={() => {
+            setnotitran("450px");
+          }}
+        >
+          <i className="bi bi-x-square"></i>
+        </div>
+      </div>
+      <div className="container border border-2 mt-5 p-4 rounded bg-white">
         <div className="row">
           <div className="col">
             <div className="row " style={{ marginTop: "24px " }}>
@@ -24,6 +46,13 @@ function LearnMore() {
                 type="button"
                 className="btn btn-outline-success border-2"
                 style={{ width: "218px", marginRight: "20px" }}
+                onClick={() => {
+                  addToCart(cardProduct);
+                  setnotitran("0");
+                  setTimeout(() => {
+                    setnotitran("415px");
+                  }, 2000);
+                }}
               >
                 Thêm vào giỏ hàng
               </button>

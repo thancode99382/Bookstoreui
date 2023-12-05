@@ -7,14 +7,16 @@ function Cart() {
 
   const [sum, setSum] = useState(0);
 
-   function handleQuantityChange(book, newQuantity) {
-    setCartItems(prevItems => {
-      const existingBook = prevItems.find(item => item.isbn13 === book.isbn13)
+  function handleQuantityChange(book, newQuantity) {
+    setCartItems((prevItems) => {
+      const existingBook = prevItems.find(
+        (item) => item.isbn13 === book.isbn13
+      );
       if (existingBook) {
-        existingBook.quantity = newQuantity
+        existingBook.quantity = newQuantity;
       }
-      return [...prevItems]
-    })
+      return [...prevItems];
+    });
   }
 
   function calculateSum(books) {
@@ -26,7 +28,7 @@ function Cart() {
       let price = parseFloat(book.price.replace("$", ""));
 
       // Add to the total cost
-      let cost = price * book.quantity
+      let cost = price * book.quantity;
       totalCost += cost;
     });
     setSum(totalCost.toFixed(2));
@@ -36,9 +38,10 @@ function Cart() {
   useEffect(() => {
     calculateSum(cartItems);
   }, [cartItems]);
+  console.log(cartItems);
 
   return (
-    <div className="container ">
+    <div className="container mt-5 ">
       <div className="shopping-cart">
         <div className="px-4 px-lg-0">
           <div className="pb-5">
@@ -102,7 +105,9 @@ function Cart() {
                                   type="number"
                                   className="form-control form-control-sm"
                                   value={cart.quantity}
-                                  onChange={(e) => handleQuantityChange(cart, e.target.value)}
+                                  onChange={(e) =>
+                                    handleQuantityChange(cart, e.target.value)
+                                  }
                                 />
                               </td>
                               <td className="border-0 align-middle">
@@ -188,17 +193,17 @@ function Cart() {
                     <ul className="list-unstyled mb-4">
                       <li className="d-flex justify-content-between py-3 border-bottom">
                         <strong className="text-muted">Order Subtotal </strong>
-                        <strong>$390.00</strong>
+                        <strong>0</strong>
                       </li>
                       <li className="d-flex justify-content-between py-3 border-bottom">
                         <strong className="text-muted">
                           Shipping and handling
                         </strong>
-                        <strong>$10.00</strong>
+                        <strong>0</strong>
                       </li>
                       <li className="d-flex justify-content-between py-3 border-bottom">
                         <strong className="text-muted">Tax</strong>
-                        <strong>$0.00</strong>
+                        <strong>0</strong>
                       </li>
                       <li className="d-flex justify-content-between py-3 border-bottom">
                         <strong className="text-muted">Total</strong>

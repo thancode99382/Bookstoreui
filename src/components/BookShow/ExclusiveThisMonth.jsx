@@ -1,5 +1,4 @@
 import { exclusiveBooks } from "../../json/ExclusiveThisMonthJson.jsx";
-
 export default function ExclusiveThisMonth() {
   return (
     <>
