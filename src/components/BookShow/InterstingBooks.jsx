@@ -1,7 +1,7 @@
 // import { interestingBookJson } from "../json/InterestingBooksJson.jsx";
-import { books } from "../json/booksInteresting";
+import { books } from "../../json/booksInteresting.jsx";
 import PropTypes from "prop-types";
-import ShowInterstingBook from "./ShowInterstingBook";
+import ShowInterstingBook from "./ShowInterstingBook.jsx";
 
 export default function InterstingBooks({ field }) {
   return (

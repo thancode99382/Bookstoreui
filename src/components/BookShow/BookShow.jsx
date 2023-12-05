@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import config from "../config";
+import config from "../../config/index.js";
 
 export default function BookShow({ book, addToCart, setProduct }) {
   const [isAddToCart, setIsAddToCart] = useState(false);

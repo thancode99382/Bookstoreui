@@ -1,14 +1,14 @@
-import FeatureBooks from "../../components/FeatureBooks.jsx";
+import FeatureBooks from "../../components/BookShow/FeatureBooks.jsx";
 import Accordion from "../../components/Accordion.jsx";
-import InterestingBooks from "../../components/InterstingBooks.jsx";
-import ExclusiveThisMonth from "../../components/ExclusiveThisMonth.jsx";
+import InterestingBooks from "../../components/BookShow/InterstingBooks.jsx";
+import ExclusiveThisMonth from "../../components/BookShow/ExclusiveThisMonth.jsx";
 import SubscribeNewsletter from "../../components/SubscribeNewsletter.jsx";
 import Pagination from "../../components/Pagination.jsx";
 import Blog from "../../components/Blog.jsx";
-import SearchForm from "../../components/SearchForm.jsx";
+import SearchForm from "../../components/Form/SearchForm.jsx";
 import searchBooks from "../../api/searchBookApi.js";
 import { useEffect, useRef, useState } from "react";
-import BookList from "../../components/BookList.jsx";
+import BookList from "../../components/BookShow/BookList.jsx";
 
 export default function Body() {
   const [books, setBooks] = useState([]);
@@ -16,6 +16,7 @@ export default function Body() {
   const [isLoading, setIsLoading] = useState(false);
   const [termSearching, setTermSearching] = useState("");
   const ref = useRef(null);
+
   const [pageChange, setPageChange] = useState(0);
 
   async function handleSubmit(term, page) {

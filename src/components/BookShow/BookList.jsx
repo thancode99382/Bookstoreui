@@ -1,8 +1,8 @@
-import BookShow from "./BookShow";
+import BookShow from "./BookShow.jsx";
 import PropTypes from "prop-types";
 import { useContext } from "react";
-import { CartContext } from "./CartContext";
-import { CardProductContext } from "./CardProductProvider";
+import { CartContext } from "../Cart/CartContext.jsx";
+import { CardProductContext } from "../Cart/CardProductProvider.jsx";
 
 export default function BookList({ books }) {
   const { addToCart } = useContext(CartContext);

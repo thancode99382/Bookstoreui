@@ -1,33 +1,20 @@
 import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../components/CartContext";
+import { CartContext } from "../../components/Cart/CartContext.jsx";
 function Cart() {
   const { cartItems } = useContext(CartContext);
   const { setCartItems } = useContext(CartContext);
   const { removeFromCart } = useContext(CartContext);
 
   const [sum, setSum] = useState(0);
-  //   const [quantity, setQuantity] = useState(1);
 
-  function handleQuantityChange(cartIsbn13, value) {
-    setCartItems((pCart) => {
-      return pCart.map((cartItem) => {
-        if (cartItem.isbn13 === cartIsbn13) {
-          const priceCart = parseFloat(cartItem.price.replace("$", ""));
-          cartItem.price = `${priceCart * value}`;
-          cartItem.quantity = value;
-        }
-        return cartItem;
-      });
-    });
-    // const existing = cartItems.find((item) => item.isbn13 === book.isbn13);
-    // if (existing) {
-    //   setCartItems((items) => {
-    //     existing.quantity++;
-    //     return [...items];
-    //   });
-    // } else {
-    //   setCartItems((items) => [...items, { ...book, quantity: 1 }]);
-    // }
+   function handleQuantityChange(book, newQuantity) {
+    setCartItems(prevItems => {
+      const existingBook = prevItems.find(item => item.isbn13 === book.isbn13)
+      if (existingBook) {
+        existingBook.quantity = newQuantity
+      }
+      return [...prevItems]
+    })
   }
 
   function calculateSum(books) {
@@ -39,7 +26,8 @@ function Cart() {
       let price = parseFloat(book.price.replace("$", ""));
 
       // Add to the total cost
-      totalCost += price;
+      let cost = price * book.quantity
+      totalCost += cost;
     });
     setSum(totalCost.toFixed(2));
     return totalCost; // Return the total cost formatted to two decimal places
@@ -48,9 +36,8 @@ function Cart() {
   useEffect(() => {
     calculateSum(cartItems);
   }, [cartItems]);
-
-  //   console.log(cartItems);
   console.log(cartItems);
+
   return (
     <div className="container ">
       <div className="shopping-cart">
@@ -112,20 +99,17 @@ function Cart() {
                               <td className="border-0 align-middle">
                                 {/* <strong>3</strong> */}
                                 <input
+                                  style={{ width: "100px" }}
                                   type="number"
                                   className="form-control form-control-sm"
                                   value={cart.quantity}
-                                  onChange={(e) =>
-                                    handleQuantityChange(
-                                      cart.isbn13,
-                                      e.target.value
-                                    )
-                                  }
+                                  onChange={(e) => handleQuantityChange(cart, e.target.value)}
                                 />
                               </td>
                               <td className="border-0 align-middle">
                                 <a className="text-dark" href="#">
                                   <i
+                                    style={{ fontSize: "30px", color: "red" }}
                                     className="bi bi-trash-fill"
                                     onClick={() => {
                                       removeFromCart(cart.isbn13);

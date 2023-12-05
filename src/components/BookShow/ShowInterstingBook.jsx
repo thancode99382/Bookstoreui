@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
-import { CartContext } from "./CartContext";
-import { Link } from "react-router-dom";
-import config from "../config";
+import { CartContext } from "../Cart/CartContext.jsx";
+import config from "../../config/index.js";
+
 export default function ShowInterstingBook({ book }) {
   const { addToCart } = useContext(CartContext);
   const [isAddToCart, setIsAddToCart] = useState(false);
@@ -29,11 +29,14 @@ export default function ShowInterstingBook({ book }) {
               </p>
             </div>
             <div className="d-flex card-footer">
-            <Link to={config.routes.learnmore} className="btn btn-dark btn-sm">
-            <i className="fa fa-eye" />
+              <a
+                href={`${config.routes.learnmore}/${book.isbn13}`}
+                className="btn btn-dark btn-sm"
+              >
+                <i className="fa fa-eye" />
                 &nbsp;Learn more
-            </Link>
-             
+              </a>
+
               <button
                 className="btn btn-outline-dark btn-sm ms-auto"
                 type="button"

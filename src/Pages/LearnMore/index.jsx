@@ -1,13 +1,13 @@
 import { useContext } from "react";
-import { CardProductContext } from "../../components/CardProductProvider";
-import CardReview from "../../components/CardReview.jsx";
+import { CardProductContext } from "../../components/Cart/CardProductProvider.jsx";
+import CardReview from "../../components/Cart/CardReview.jsx";
 
 function LearnMore() {
   const { cardProduct } = useContext(CardProductContext);
 
   return (
     <>
-      <div className="container border border-2 mt-5 p-2 rounded">
+      <div className="container border border-2 mt-5 p-4 rounded">
         <div className="row">
           <div className="col">
             <div className="row " style={{ marginTop: "24px " }}>
