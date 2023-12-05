@@ -8,18 +8,17 @@ function LearnMore() {
   const { cardProduct } = useContext(CardProductContext);
   const [notitran, setnotitran] = useState("415px");
   const { addToCart } = useContext(CartContext);
+
   return (
     <>
       <div className="noti" style={{ transform: `translate(${notitran},0)` }}>
         <div className="toast__icon">
           <i className="bi bi-bag-check"></i>
         </div>
-
         <div className="toast__body">
           <h3 className="toast__title">Thành Công</h3>
           <p className="toast__msg">Bạn đã thêm sản phẩm </p>
         </div>
-
         <div
           className="toast__close"
           onClick={() => {
