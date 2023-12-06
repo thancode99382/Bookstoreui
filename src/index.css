@@ -12,7 +12,7 @@ body {
 }
 
 .loader .circle {
-  --color: #198754;
+  --color: #091579;
   --dim: 1.2rem;
   width: var(--dim);
   height: var(--dim);
@@ -152,24 +152,82 @@ body {
 .toast__close {
   padding: 0 16px;
 }
+
 .toast__body {
   flex-grow: 1;
 }
+
 .toast__title {
   font-size: 16px;
   font-weight: 600;
   color: #333;
 }
+
 .toast__msg {
   font-size: 14px;
 
   color: #888;
 }
+
 .toast__close {
   font-size: 16px;
   color: #000000;
   cursor: pointer;
 }
+
 .toast__icon {
   font-size: 24px;
+}
+/* nav */
+.logo {
+  font-size: 30px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(120deg, #f3f3f3, #8d4fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #091579;
+  color: #fff;
+ 
+  
+ 
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  column-gap: 20px;
+}
+
+nav ul li {
+  padding-bottom: 5px;
+}
+nav ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+.item-list {
+  position: relative;
+}
+.item-list:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--yellow), var(--violet));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.item-list.active:after,
+.item-list:hover:after {
+  width: 100%;
 }

@@ -12,7 +12,7 @@ function LearnMore() {
   // console.log(cardProduct);
 
   return (
-    <>
+    <div style={{padding:'0 160px 0 160px'}}>
       <div className="noti" style={{ transform: `translate(${notitran},0)` }}>
         <div className="toast__icon">
           <i className="bi bi-bag-check"></i>
@@ -30,7 +30,7 @@ function LearnMore() {
           <i className="bi bi-x-square"></i>
         </div>
       </div>
-      <div className="container border border-2 mt-5 p-4 rounded bg-white">
+      <div className=" border border-2 mt-5 p-4 rounded bg-white" > 
         <div className="row">
           <div className="col">
             <div className="row " style={{ marginTop: "24px " }}>
@@ -45,14 +45,14 @@ function LearnMore() {
             >
               <button
                 type="button"
-                className="btn btn-outline-success border-2"
-                style={{ width: "218px", marginRight: "20px" }}
+                className="btn  border-2"
+                style={{ width: "218px", marginRight: "20px" ,borderColor:'#091579' }}
                 onClick={() => {
                   addToCart(cardProduct);
                   setnotitran("0");
                   setTimeout(() => {
                     setnotitran("415px");
-                  }, 2000);
+                  }, 3000);
                 }}
               >
                 Thêm vào giỏ hàng
@@ -60,8 +60,8 @@ function LearnMore() {
 
               <button
                 type="button"
-                className="btn btn-success  border-2"
-                style={{ width: "218px" }}
+                className="btn border-2 "
+                style={{ width: "218px" , color:'white', borderColor:'#091579', background:'#091579'  }}
               >
                 Mua Ngay
               </button>
@@ -237,7 +237,7 @@ function LearnMore() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

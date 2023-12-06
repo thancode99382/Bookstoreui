@@ -41,7 +41,7 @@ function Cart() {
   console.log(cartItems);
 
   return (
-    <div className="container mt-5 ">
+    <div style={{padding:'0 160px 0 160px'}} className="container mt-5 ">
       <div className="shopping-cart">
         <div className="px-4 px-lg-0">
           <div className="pb-5">

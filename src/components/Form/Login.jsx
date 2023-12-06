@@ -23,8 +23,9 @@ export default function Login() {
   }
 
   return (
-      <div className="container col-4">
-        <form onSubmit={handleSubmit} className="mt-5">
+      <div className="col-4" >
+        <form  onSubmit={handleSubmit} className="mt-5 bg-white border rounded" style={{marginLeft:"200px" ,padding:'30px'}} >
+          <h1 style={{fontSize:'24px' , fontWeight:'bold'}}>Login</h1>
           <div className="mb-3">
             <label htmlFor="username" className="form-label">Username</label>
             <input value={user.username} type="text" name={'username'} onChange={handleUserChange}
@@ -36,7 +37,7 @@ export default function Login() {
             <input value={user.password} type="password" name={'password'} onChange={handleUserChange}
                    className="form-control" id="password"/>
           </div>
-          <button type={'submit'} className="btn btn-primary">Submit</button>
+          <button type={'submit'} style={{color:'#091579'}} className="btn btn-primary">Submit</button>
         </form>
       </div>
   )

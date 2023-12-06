@@ -9,7 +9,7 @@ export default function BookList({ books }) {
   const { setProduct } = useContext(CardProductContext);
 
   return (
-    <div className="book-list row mt-5">
+    <div className="book-list row mt-5 " style={{padding:'0 160px 0 160px' ,display:'grid' , gridTemplateColumns: "1fr 1fr 1fr"}}>
       {books.map((book) => (
         <div className="col-md-3" key={book.isbn13}>
           <BookShow book={book} addToCart={addToCart} setProduct={setProduct} />

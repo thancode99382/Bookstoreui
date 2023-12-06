@@ -6,13 +6,15 @@ export default function Footer() {
   return <div classNameName={cx("test")}>Footer</div>;
 }
  */
-
+import SubscribeNewsletter from "../../components/SubscribeNewsletter"
 export default function Footer() {
   return (
-    <div>
-      <div className="container-fluit bg-white mt-5">
-        <footer className="container" style={{ paddingTop: "50px" }}>
-          <div className="row">
+    <div >
+      
+      <div className="container-fluit bg-white mt-5" >
+        <footer className="container">
+        <SubscribeNewsletter />
+          <div className="row " style={{padding:'0 160px 0 160px'}}>
             <div className="col">
               <div className="row">
                 <div className="col">
@@ -27,8 +29,8 @@ export default function Footer() {
               <div className="row">
                 <div className="col d-md-flex align-items-md-center">
                   <i
-                    className="bi bi-send-fill text-success d-md-flex align-items-md-center"
-                    style={{ fontSize: "38px" }}
+                    className="bi bi-send-fill  d-md-flex align-items-md-center"
+                    style={{ fontSize: "38px", color:'#091579' }}
                   ></i>
                 </div>
                 <div className="col-md-8 col-xl-9">
@@ -45,8 +47,8 @@ export default function Footer() {
               <div className="row">
                 <div className="col d-xl-flex align-items-xl-center">
                   <i
-                    className="bi bi-telephone-fill text-success"
-                    style={{ fontSize: "38px" }}
+                    className="bi bi-telephone-fill "
+                    style={{ fontSize: "38px",color:'#091579'  }}
                   ></i>
                 </div>
                 <div className="col-xl-9">
@@ -63,8 +65,8 @@ export default function Footer() {
               <div className="row">
                 <div className="col d-xl-flex align-items-xl-center">
                   <i
-                    className="bi bi-envelope-arrow-up-fill text-success "
-                    style={{ fontSize: "38px" }}
+                    className="bi bi-envelope-arrow-up-fill  "
+                    style={{ fontSize: "38px",color:'#091579' }}
                   ></i>
                 </div>
                 <div className="col-xl-9">
@@ -216,23 +218,23 @@ export default function Footer() {
               <div className="row">
                 <div
                   className="col d-xl-flex justify-content-xl-center"
-                  style={{ marginTop: " 22px", marginRight: "30px" }}
+                  style={{ marginTop: " 22px", marginRight: "30px",color:'#091579' }}
                 >
                   <i
-                    className="bi bi-facebook text-success d-md-flex align-items-md-center"
-                    style={{ fontSize: "38px", marginRight: "30px" }}
+                    className="bi bi-facebook  d-md-flex align-items-md-center"
+                    style={{ fontSize: "38px", marginRight: "30px",color:'#091579' }}
                   ></i>
                   <i
-                    className="bi bi-instagram text-success d-md-flex align-items-md-center"
-                    style={{ fontSize: "38px", marginRight: "30px" }}
+                    className="bi bi-instagram  d-md-flex align-items-md-center"
+                    style={{ fontSize: "38px", marginRight: "30px",color:'#091579' }}
                   ></i>
                   <i
-                    className="bi bi-twitter text-success d-md-flex align-items-md-center"
-                    style={{ fontSize: "38px", marginRight: "30px" }}
+                    className="bi bi-twitter  d-md-flex align-items-md-center"
+                    style={{ fontSize: "38px", marginRight: "30px",color:'#091579' }}
                   ></i>
                   <i
-                    className="bi bi-google text-success d-md-flex align-items-md-center"
-                    style={{ fontSize: "38px", marginRight: "30px" }}
+                    className="bi bi-google  d-md-flex align-items-md-center"
+                    style={{ fontSize: "38px", marginRight: "30px",color:'#091579'}}
                   ></i>
                 </div>
               </div>

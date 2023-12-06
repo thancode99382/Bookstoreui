@@ -37,9 +37,10 @@ export default function Register() {
   }
 
   return (
-      <div className="container col-4">
-        <h1>Register</h1>
-        <form onSubmit={handleSubmit} className="mt-5">
+      <div className="container col-4 ">
+        
+        <form onSubmit={handleSubmit} className="mt-5 bg-white" style={{margin:'0 160px 0 160px', padding:'30px'}}>
+        <h1 style={{fontSize:'24px' ,fontWeight:'bold'}} className="mb-5">Register</h1>
           <div className="mb-3">
             <label htmlFor="username" className="form-label">Username</label>
             <input value={user.username} type="text" name={'username'} onChange={handleUserChange}
@@ -56,7 +57,7 @@ export default function Register() {
             <input value={confirmPassword} type="password" name={'confirmPassword'} onChange={handleConfirmPasswordChange}
                    className="form-control" id="password"/>
           </div>
-          <button type={'submit'} className="btn btn-primary">Register</button>
+          <button type={'submit'} style={{color:'#091579'}} className="btn btn-primary">Register</button>
           {isRegistered && <Button/>}
         </form>
       </div>

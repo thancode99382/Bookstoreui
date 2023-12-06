@@ -1,13 +1,14 @@
 export default function UserInformation() {
   const userName = localStorage.getItem('username')
   return (
-    <div className="container-fluid">
-      <h3 className="text-dark mb-4">Profile</h3>
-      <div className="card shadow mb-3">
+    <div className="container-fluid" >
+      
+      <div className="card shadow mb-3" style={{margin:'100px' , padding:'50px'}}>
+      <h1 style={{fontSize:'24px' ,fontWeight:'bold',marginBottom:'20px'}}>Profile</h1>
         <div className="card-header py-3">
           <p className="text-primary m-0 fw-bold">User Settings</p>
         </div>
-        <div className="card-body">
+        <div>
           <form>
             <div
               className="row"
@@ -27,13 +28,6 @@ export default function UserInformation() {
                   style={{ display: "inline", maxHeight: 110 }}
                 />
                 <br />
-                <button
-                  id="photoBtn"
-                  className="btn btn-primary btn-sm"
-                  type="button"
-                >
-                  Change Photo
-                </button>
               </div>
               <div className="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
                 <div className="row">

@@ -20,7 +20,7 @@ export default function Header() {
         >
           <div className="col-xl-4 d-lg-flex align-items-lg-center justify-content-xl-start">
             <Link to={config.routes.homePage}>
-              <img src="https://demo.joomlabuff.com/bookstore/images/logo/logo_green.png" />
+              <img style={{width:'128px' ,height:"87px"}} width={257} height={87}  src="https://png.pngtree.com/template/20191125/ourlarge/pngtree-book-store-logo-template-sale-learning-logo-designs-vector-image_335046.jpg" />
             </Link>
           </div>
           <div className="col-lg-6 col-xl-5 offset-lg-0 d-xl-flex justify-content-lg-center align-items-lg-center justify-content-xl-end">

@@ -13,17 +13,17 @@ export default function Accordion() {
       }}
     >
       <div className="col-xl-3 d-xl-flex flex-column justify-content-xl-center">
-        <h2 style={{ color: "#27ae61", fontWeight: "bold" }}>
+        <h2 style={{ fontSize:'24px', color: "#091579", fontWeight: "bold" }}>
           CHOOSE YOUR BRAIN FOOD
         </h2>
-        <h2 className="fw-bolder" style={{ marginTop: 30 }}>
+        <h2 className="fw-bolder" style={{ fontSize:'24px', marginBottom: 30,color: "#091579" }}>
           SALES UP TO 70% OFF
         </h2>
         <div>
           <button
             className="btn btn-primary"
             type="button"
-            style={{ background: "#229955", fontWeight: "bold" }}
+            style={{background:'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,21,121,1) 35%, rgba(0,212,255,1) 100%)', fontWeight: "bold" }}
           >
             Learn more
           </button>
@@ -32,7 +32,7 @@ export default function Accordion() {
             type="button"
             style={{
               marginLeft: 15,
-              background: "#229955",
+              background:'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,21,121,1) 35%, rgba(0,212,255,1) 100%)',
               fontWeight: "bold",
             }}
           >
@@ -45,11 +45,11 @@ export default function Accordion() {
           <ul>
             {slides.map((slide, index) => (
               <li key={index}>
-                <a className="image_title" href="#">
+                <a  className="image_title" href="#">
                   {slide.title}
                 </a>
                 <a href="">
-                  <img src={slide.imageUrl} alt={slide.title} />
+                  <img style={{height:'319px', width:'100%'}} src={slide.imageUrl} alt={slide.title} />
                 </a>
               </li>
             ))}

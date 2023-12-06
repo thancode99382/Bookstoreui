@@ -24,7 +24,7 @@ export default function SearchForm({ onSubmit }) {
             placeholder="Enter your books name"
           />
           <div className="input-group-append">
-            <button className="btn btn-success" type="submit">
+            <button className="btn btn-primary bg-primary " type="submit">
               Search
             </button>
           </div>

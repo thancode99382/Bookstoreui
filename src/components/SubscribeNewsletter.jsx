@@ -5,14 +5,14 @@ export default function SubscribeNewsletter() {
         className="py-4 py-xl-5"
         style={{ paddingTop: 0, paddingBottom: 0 }}
       >
-        <div className="container-fluid">
+        <div className="container-fluid"> 
           <div
             className="text-white border rounded border-0 border-light d-flex flex-column justify-content-between align-items-center flex-lg-row p-4 p-lg-5"
             data-bs-theme="light"
             style={{
               paddingTop: 0,
               paddingBottom: 0,
-              background: "rgb(25, 135, 84)",
+              background: "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,21,121,1) 35%, rgba(0,212,255,1) 100%)",
             }}
           >
             <div className="text-center text-lg-start py-3 py-lg-1">

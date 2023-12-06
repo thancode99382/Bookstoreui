@@ -9,8 +9,12 @@ const FeatureBooksRender = ({ newBooks }) => {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)",
+        gridTemplateColumns: "1fr 1fr",
         gap: "1rem",
+        marginTop:'50px',
+        padding:'0 120px 0 120px',
+      fontSize:'14px'
+        
       }}
     >
       {newBooks.map((newBook) => (
