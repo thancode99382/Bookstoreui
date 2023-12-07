@@ -9,7 +9,7 @@ export default function Footer() {
 import SubscribeNewsletter from "../../components/SubscribeNewsletter"
 export default function Footer() {
   return (
-    <div >
+    <div id={"Contact"}>
       
       <div className="container-fluit bg-white mt-5" >
         <footer className="container">

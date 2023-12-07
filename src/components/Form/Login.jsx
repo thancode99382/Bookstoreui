@@ -60,7 +60,8 @@ export default function Login() {
             <input value={userEntered.password} type="password" name={'password'} onChange={handleUserChange}
                    className="form-control" id="password"/>
           </div>
-          <button type={'submit'} className="btn btn-primary">Submit</button>
+          <button type={'submit'} className="btn btn-primary text-dark">Submit</button>
+
         </form>
       </div>
   )

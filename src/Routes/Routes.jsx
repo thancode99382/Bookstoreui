@@ -2,7 +2,7 @@ import config from "../config";
 // import Body from "../Pages/Body/Body";
 import homePage from "../Pages/homePage/homePage";
 import Cart from "../Pages/Cart/Cart";
-import LearnMore from "../Pages/LearnMore";
+import LearnMore from "../Pages/LearnMore/LearnMore.jsx";
 import Register from "../components/Form/Register.jsx";
 import Login from "../components/Form/Login.jsx";
 import UserInformation from "../components/User/UserInformation.jsx";

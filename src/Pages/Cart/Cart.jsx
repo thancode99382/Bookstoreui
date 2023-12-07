@@ -38,7 +38,7 @@ function Cart() {
   useEffect(() => {
     calculateSum(cartItems);
   }, [cartItems]);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div style={{padding:'0 160px 0 160px'}} className="container mt-5 ">
@@ -73,11 +73,11 @@ function Cart() {
                           return (
                             <tr key={index}>
                               <th className="border-0" scope="row">
-                                <div className="p-2">
+                                <div className="p-2 d-flex">
                                   <img
                                     className="img-fluid rounded shadow-sm"
                                     src={cart.image}
-                                    alt
+                                    alt={cart.title}
                                     width="90"
                                   />
                                   <div className="ml-3 d-inline-block align-middle">
@@ -90,13 +90,14 @@ function Cart() {
                                       </a>
                                     </h5>
                                     <span className="text-muted font-weight-normal font-italic d-block">
-                                      Category: Watches
+                                      {cart.subtitle ? (cart.subtitle): 'Have no subtitle yet. ( ´･･)ﾉ(._.`)'}
                                     </span>
                                   </div>
                                 </div>
                               </th>
                               <td className="border-0 align-middle">
-                                <strong>{cart.price}</strong>
+
+                                {cart.price === '$0.00' ? (<p className={'text-success fw-bold'}>Free</p>): (<strong>{cart.price}</strong>) }
                               </td>
                               <td className="border-0 align-middle">
                                 {/* <strong>3</strong> */}
@@ -175,7 +176,6 @@ function Cart() {
                     </p>
                     <textarea
                       className="form-control"
-                      name
                       cols="30"
                       rows="2"
                     ></textarea>

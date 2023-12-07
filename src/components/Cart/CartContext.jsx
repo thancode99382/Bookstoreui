@@ -1,25 +1,30 @@
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 import propTypes from "prop-types";
 
 const CartContext = createContext();
 
 const CartProvider = ({children}) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const localData = localStorage.getItem("cartItems");
+    return localData ? JSON.parse(localData) : [];
+  });
 
-  const addToCart = (book) => {
-    // check the book is already exist
-    // setCartItems([...cartItems, book]);
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  }, [cartItems]);
+
+  const addToCart = (book, quantity = 1) => {
     setCartItems(prevItems => {
       const existingBook = prevItems.find(item => item.isbn13 === book.isbn13);
       if (existingBook) {
-        //   if it is, increment the quantity
-        existingBook.quantity += 1
-        return [...prevItems]
+        // if it is, increment the quantity
+        existingBook.quantity += quantity;
+        return [...prevItems];
       } else {
         // add to the cart with a new field `quantity`
-        return [...prevItems, {...book, quantity: 1}];
+        return [...prevItems, {...book, quantity: quantity}];
       }
-    })
+    });
   };
 
   const removeFromCart = (id) => {

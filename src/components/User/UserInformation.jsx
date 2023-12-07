@@ -1,5 +1,7 @@
 export default function UserInformation() {
-  const userName = localStorage.getItem('username')
+
+  const userName = JSON.parse(localStorage.getItem("currentUser")).username
+
   return (
     <div className="container-fluid" >
       
