@@ -1,6 +1,9 @@
 export default function UserInformation() {
 
-  const userName = JSON.parse(localStorage.getItem("currentUser")).username
+  let userName = JSON.parse(localStorage.getItem("currentUser"))
+  if (userName) {
+    userName = userName.username
+  }
 
   return (
     <div className="container-fluid" >

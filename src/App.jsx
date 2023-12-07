@@ -5,6 +5,8 @@ import {useState} from "react";
 import {UserContext} from "./components/User/UserContext.jsx";
 
 
+// k dc roi, ten sai => Quoc Dat co khoang cach, nguyen tac dat ten cho du an la k co khoang cach trong duong dan
+
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   return (

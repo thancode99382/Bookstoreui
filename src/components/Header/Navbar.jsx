@@ -2,8 +2,7 @@ import User from "../Form/User";
 import {Link} from 'react-scroll'
 
 export default function Navbar() {
-  const userName = JSON.parse(localStorage.getItem("currentUser")).username
-  // console.log(userName)
+  const userName = JSON.parse(localStorage.getItem("currentUser"))
 
   return (
       <nav>
